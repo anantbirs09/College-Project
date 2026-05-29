@@ -27,4 +27,5 @@ A fully responsive, multi-page frontend website designed to provide an online pr
 
 ## 👨‍💻 Author
 **Anantbir Singh**
+**Tanmay**
 *Computer Engineering Student*
