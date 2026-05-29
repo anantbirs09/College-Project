@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Consultation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Ketuveda</h1>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="bookings.html" class="active-link">Book Consultation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero page-hero">
+            <p class="tagline">Begin Your Session</p>
+            <h2>Book a consultation with calm and clarity</h2>
+            <p>Share a few details below to begin your consultation request in a calm and guided way.</p>
+            <div class="hero-orbits">
+                <span>Birth Details</span>
+                <span>Preferred Timing</span>
+                <span>Key Questions</span>
+            </div>
+        </section>
+
+        <section class="content-panel two-column-panel">
+            <div class="info-card">
+                <p class="eyebrow">Booking Notes</p>
+                <h3>What to keep ready</h3>
+                <p>For a full reading, keep your birth date, birth time, and birthplace available. If the exact birth time is unknown, you can still use this page as a request form for guidance.</p>
+                <div class="detail-list">
+                    <span>Birth details</span>
+                    <span>Preferred service</span>
+                    <span>Questions you want covered</span>
+                </div>
+            </div>
+
+            <form class="form-card">
+                <label for="name">Full Name</label>
+                <input id="name" type="text">
+
+                <label for="email">Email</label>
+                <input id="email" type="email">
+
+                <label for="service">Service</label>
+                <select id="service">
+                    <option>Select a consultation</option>
+                    <option>Kundli Reading</option>
+                    <option>Marriage Compatibility</option>
+                    <option>Career Guidance</option>
+                    <option>Remedy Consultation</option>
+                </select>
+
+                <label for="notes">Notes</label>
+                <textarea id="notes" rows="5"></textarea>
+
+                <button type="submit" class="book">Submit Request</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Radiance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Ketuveda</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html" class="active-link">Marketplace</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="bookings.html">Book Consultation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero gem-hero ruby-sky">
+            <p class="tagline">Gemstone Detail</p>
+            <h2>Ruby Radiance</h2>
+            <p>Ruled by the Sun, the "King of Planets," this fiery gemstone is believed to boost self-confidence, leadership, and vital energy.</p>
+            <div class="hero-orbits">
+                <span>Confidence</span>
+                <span>Vitality</span>
+                <span>Solar Energy</span>
+            </div>
+            <a class="book" href="marketplace.html">Back to Marketplace</a>
+        </section>
+
+        <section class="content-panel gemstone-panel-intro">
+            <div class="section-heading centered-heading">
+                <p class="eyebrow">Ruby Essence</p>
+                <h2>Strength, radiance, and solar energy</h2>
+            </div>
+            <div class="gemstone-facts">
+                <article class="gemstone-fact">
+                    <strong>Sun</strong>
+                    <p>Traditionally linked with leadership, radiance, and self-expression.</p>
+                </article>
+                <article class="gemstone-fact">
+                    <strong>Royal Red</strong>
+                    <p>Known for its deep red glow and striking, high-visibility presence.</p>
+                </article>
+                <article class="gemstone-fact">
+                    <strong>Daily Wear</strong>
+                    <p>Often chosen by those who want a gemstone that feels bold, energizing, and purposeful.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-panel gemstone-story-layout" data-gemstone-scroll>
+            <div class="gemstone-story-media">
+                <div class="gemstone-visual gemstone-story-image gem-ruby" data-gemstone-image>
+                    <img src="../CSS/Images/ruby.jpg" alt="Ruby gemstone" class="gemstone-real-image gemstone-real-image-contain">
+                </div>
+            </div>
+
+            <div class="gemstone-story-content">
+                <article class="info-card">
+                    <p class="eyebrow">Gem Overview</p>
+                    <h3>Ruby (Manik)</h3>
+                    <p>Ruled by the Sun, ruby is associated with confidence, vitality, and strong personal presence. It is often recommended for those seeking courage, recognition, and a more commanding energy.</p>
+                    <div class="detail-list">
+                        <span>Leadership</span>
+                        <span>Vital Force</span>
+                        <span>Statement Stone</span>
+                    </div>
+                </article>
+
+                <div class="gemstone-highlights">
+                    <article class="gemstone-highlight">
+                        <h4>Why it stands out</h4>
+                        <p>The vivid red tone makes ruby one of the most striking traditional stones, often chosen by those drawn to visibility, strength, and authority.</p>
+                    </article>
+                    <article class="gemstone-highlight">
+                        <h4>Suggested mood</h4>
+                        <p>Ruby is often worn by people who want a stronger sense of confidence, leadership, and inner fire in daily life.</p>
+                    </article>
+                </div>
+
+                <article class="info-card">
+                    <p class="eyebrow">Care Ritual</p>
+                    <h3>Simple handling and cleansing guidance</h3>
+                    <p>Keep the gemstone clean with a soft cloth, avoid harsh exposure, and place it in a calm sacred space before first wear. A short morning prayer can reinforce the intentional, solar character of the stone.</p>
+                    <div class="detail-list">
+                        <span>Soft Cloth</span>
+                        <span>Morning Ritual</span>
+                        <span>Clean Storage</span>
+                    </div>
+                </article>
+
+                <div class="gemstone-mini-grid">
+                    <article class="gemstone-mini-card">
+                        <h4>Energy</h4>
+                        <p>Presented as bold, activating, and confidence-building.</p>
+                    </article>
+                    <article class="gemstone-mini-card">
+                        <h4>Styling</h4>
+                        <p>Often set in rings or pendants for those who want a bold and regal look.</p>
+                    </article>
+                    <article class="gemstone-mini-card">
+                        <h4>Audience</h4>
+                        <p>Well suited to people looking for a gemstone with a strong, radiant, and kingly personality.</p>
+                    </article>
+                </div>
+
+                <article class="review-card">
+                    <p class="eyebrow">Why People Choose It</p>
+                    <h3>A gemstone for confidence and recognition</h3>
+                    <p>Ruby is often chosen by those who want to strengthen self-belief, sharpen personal presence, and carry a stone that feels fiery, dignified, and full of life.</p>
+                </article>
+
+                <article class="info-card gemstone-cta">
+                    <div class="gemstone-cta-copy">
+                        <p class="eyebrow">Wearing Intention</p>
+                        <h3>Keep it close with clarity and respect</h3>
+                        <p>Ruby is best worn with a clear intention, clean handling, and a sense of steadiness, especially if you are seeking stronger vitality or solar support.</p>
+                    </div>
+                    <a class="book" href="marketplace.html">Explore More Gems</a>
+                </article>
+            </div>
+        </section>
+    </main>
+    <script>
+        (() => {
+            const section = document.querySelector("[data-gemstone-scroll]");
+            const image = document.querySelector("[data-gemstone-image]");
+
+            if (!section || !image) return;
+
+            const updateScrollImage = () => {
+                const rect = section.getBoundingClientRect();
+                const progress = Math.min(Math.max((window.innerHeight - rect.top) / (rect.height + window.innerHeight), 0), 1);
+                const scale = 1 - progress * 0.24;
+                const translateY = progress * 26;
+
+                image.style.transform = `translateY(${translateY}px) scale(${Math.max(scale, 0.78)})`;
+                image.style.opacity = `${Math.max(1 - progress * 0.2, 0.8)}`;
+            };
+
+            updateScrollImage();
+            window.addEventListener("scroll", updateScrollImage, { passive: true });
+            window.addEventListener("resize", updateScrollImage);
+        })();
+    </script>
+</body>
+
+</html>
+

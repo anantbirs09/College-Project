@@ -1,0 +1,971 @@
+:root {
+    --bg-dark: #050412;
+    --bg-mid: #111036;
+    --panel: rgba(11, 12, 42, 0.62);
+    --text-main: #f6f1db;
+    --text-soft: #cfd2eb;
+    --accent-gold: #f2c66f;
+    --accent-cyan: #77dbff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at 12% 78%, rgba(214, 154, 110, 0.28) 0 90px, rgba(175, 103, 70, 0.22) 91px 132px, rgba(110, 70, 66, 0.08) 133px 170px, transparent 171px),
+        radial-gradient(circle at 12% 78%, rgba(245, 214, 188, 0.2) 0 56px, transparent 57px),
+        radial-gradient(circle at 84% 18%, rgba(214, 193, 132, 0.3) 0 74px, rgba(140, 121, 166, 0.18) 75px 106px, rgba(90, 86, 144, 0.08) 107px 146px, transparent 147px),
+        radial-gradient(circle at 84% 18%, rgba(248, 232, 198, 0.22) 0 38px, transparent 39px),
+        radial-gradient(ellipse 160px 34px at 84% 18%, transparent 0 88px, rgba(241, 216, 188, 0.28) 89px 101px, transparent 102px),
+        radial-gradient(circle at 72% 74%, rgba(120, 182, 191, 0.18) 0 54px, rgba(91, 121, 167, 0.12) 55px 82px, transparent 83px),
+        radial-gradient(circle at 8% 18%, rgba(255, 255, 255, 1) 0 2px, transparent 4px),
+        radial-gradient(circle at 17% 72%, rgba(255, 255, 255, 0.85) 0 1.8px, transparent 4px),
+        radial-gradient(circle at 29% 38%, rgba(119, 219, 255, 0.9) 0 2px, transparent 4.5px),
+        radial-gradient(circle at 41% 14%, rgba(255, 244, 214, 0.9) 0 2px, transparent 4.4px),
+        radial-gradient(circle at 53% 62%, rgba(255, 255, 255, 0.88) 0 1.8px, transparent 4px),
+        radial-gradient(circle at 66% 26%, rgba(119, 219, 255, 0.86) 0 2px, transparent 4.4px),
+        radial-gradient(circle at 78% 78%, rgba(255, 255, 255, 0.88) 0 1.9px, transparent 4px),
+        radial-gradient(circle at 91% 32%, rgba(255, 255, 255, 0.82) 0 1.8px, transparent 4.2px),
+        radial-gradient(circle at 15% 20%, rgba(255, 175, 4, 0.674) 0%, transparent 35%),
+        radial-gradient(circle at 85% 10%, rgba(194, 161, 104, 0.2) 0%, transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(120, 70, 190, 0.2) 0%, transparent 35%),
+        linear-gradient(160deg, var(--bg-dark) 0%, var(--bg-mid) 45%, #05071a 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 84% 18%, rgba(255, 236, 210, 0.1) 0 110px, transparent 111px),
+        radial-gradient(circle at 12% 78%, rgba(255, 217, 190, 0.08) 0 132px, transparent 133px),
+        radial-gradient(circle at 72% 74%, rgba(119, 219, 255, 0.08) 0 82px, transparent 83px),
+        radial-gradient(circle at 12% 24%, rgba(255, 255, 255, 0.9) 0 2px, transparent 7px),
+        radial-gradient(circle at 24% 84%, rgba(255, 255, 255, 0.65) 0 1.8px, transparent 6px),
+        radial-gradient(circle at 36% 46%, rgba(119, 219, 255, 0.72) 0 2px, transparent 7px),
+        radial-gradient(circle at 58% 18%, rgba(255, 255, 255, 0.72) 0 2px, transparent 7px),
+        radial-gradient(circle at 72% 68%, rgba(255, 244, 214, 0.7) 0 2px, transparent 7px),
+        radial-gradient(circle at 88% 36%, rgba(119, 219, 255, 0.65) 0 2px, transparent 7px);
+    opacity: 1;
+    animation: starPulse 5s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 12% 78%, rgba(255, 233, 212, 0.92) 0 4px, transparent 10px),
+        radial-gradient(circle at 84% 18%, rgba(255, 233, 212, 0.92) 0 5px, transparent 10px),
+        radial-gradient(circle at 72% 74%, rgba(119, 219, 255, 0.9) 0 4px, transparent 10px),
+        linear-gradient(90deg, transparent 47%, rgba(255, 255, 255, 0.9) 49.5%, transparent 53%) 12% 24% / 42px 42px no-repeat,
+        linear-gradient(0deg, transparent 47%, rgba(255, 255, 255, 0.9) 49.5%, transparent 53%) 12% 24% / 42px 42px no-repeat,
+        linear-gradient(90deg, transparent 47%, rgba(119, 219, 255, 0.75) 49.5%, transparent 53%) 36% 46% / 34px 34px no-repeat,
+        linear-gradient(0deg, transparent 47%, rgba(119, 219, 255, 0.75) 49.5%, transparent 53%) 36% 46% / 34px 34px no-repeat,
+        linear-gradient(90deg, transparent 47%, rgba(255, 244, 214, 0.78) 49.5%, transparent 53%) 72% 68% / 38px 38px no-repeat,
+        linear-gradient(0deg, transparent 47%, rgba(255, 244, 214, 0.78) 49.5%, transparent 53%) 72% 68% / 38px 38px no-repeat,
+        radial-gradient(circle at 88% 36%, rgba(255, 255, 255, 0.82) 0 4px, transparent 12px),
+        radial-gradient(circle at 58% 18%, rgba(119, 219, 255, 0.72) 0 4px, transparent 12px);
+    opacity: 1;
+    animation: sparkleShift 4.5s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    background: rgba(5, 6, 30, 0.78);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.logo {
+    font-family: "Cinzel", serif;
+    color: var(--accent-gold);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    text-align: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.98rem;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-cyan);
+}
+
+.hero {
+    width: min(1000px, 92%);
+    margin: 80px auto 40px;
+    text-align: center;
+    padding: 60px 30px;
+    border-radius: 24px;
+    background: linear-gradient(155deg, rgba(20, 18, 66, 0.75), rgba(9, 7, 34, 0.82));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.35);
+}
+
+.hero-home {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg-wheel {
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    width: min(58vw, 620px);
+    aspect-ratio: 1 / 1;
+    transform: translateY(-50%);
+    opacity: 0.34;
+    pointer-events: none;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+}
+
+.astro-wheel {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.astro-wheel-rotor {
+    transform-origin: 300px 300px;
+    animation: wheelRotate 46s linear infinite;
+}
+
+.wheel-ring,
+.wheel-spoke,
+.wheel-inner-stars path {
+    fill: none;
+    stroke: url(#wheelStroke);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.wheel-ring {
+    stroke-width: 2;
+}
+
+.wheel-ring-soft {
+    opacity: 0.7;
+}
+
+.wheel-ring-faint {
+    opacity: 0.38;
+}
+
+.wheel-spoke {
+    stroke-width: 1.2;
+    opacity: 0.62;
+}
+
+.wheel-node {
+    fill: #f4d6c0;
+    opacity: 0.82;
+}
+
+.wheel-inner-stars path {
+    stroke-width: 1.4;
+    opacity: 0.72;
+}
+
+.tagline {
+    color: var(--accent-cyan);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-family: "Cinzel", serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--accent-gold);
+    margin-bottom: 16px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 26px;
+    color: var(--text-soft);
+    font-size: 1.05rem;
+}
+
+.book {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f3cc7a, #e99f52);
+    color: #1e1333;
+    cursor: pointer;
+    transition: transform 0.01s ease, box-shadow 0.3s ease;
+    position: relative;
+    top: 15px;
+}
+
+.book:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(233, 159, 82, 0.3);
+}
+
+.active-link {
+    color: var(--accent-cyan) !important;
+}
+
+.services,
+.about {
+    width: min(1000px, 92%);
+    margin: 28px auto;
+    padding: 38px 30px;
+    border-radius: 22px;
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.services h2,
+.about h2 {
+    font-family: "Cinzel", serif;
+    color: var(--accent-gold);
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.service-card:hover {
+    border-color: rgba(119, 219, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.service-card h3 {
+    color: var(--accent-cyan);
+    margin-bottom: 6px;
+    font-size: 1.14rem;
+}
+
+.service-card p,
+.about p {
+    color: var(--text-soft);
+}
+
+.about p {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.marketplace-section {
+    width: min(1100px, 92%);
+    margin: 28px auto 60px;
+    padding: 38px 30px;
+    border-radius: 22px;
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.market-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 26px;
+}
+
+.filter-chip {
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-main);
+    font: inherit;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.filter-chip:hover,
+.filter-chip.is-active {
+    border-color: rgba(119, 219, 255, 0.55);
+    background: rgba(119, 219, 255, 0.14);
+    color: var(--accent-cyan);
+    transform: translateY(-1px);
+}
+
+.category-block + .category-block {
+    margin-top: 44px;
+}
+
+.category-block.is-hidden {
+    display: none;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-family: "Cinzel", serif;
+    color: var(--accent-gold);
+    font-size: 1.7rem;
+}
+
+.eyebrow {
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.82rem;
+    margin-bottom: 8px;
+}
+
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.market-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.market-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(119, 219, 255, 0.5);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.24);
+}
+
+.market-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.market-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.market-photo-placeholder {
+    display: grid;
+    place-items: center;
+    font-family: "Cinzel", serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: rgba(246, 241, 219, 0.9);
+    background:
+        linear-gradient(135deg, rgba(242, 198, 111, 0.2), rgba(119, 219, 255, 0.14)),
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.16), transparent 55%),
+        rgba(9, 10, 36, 0.9);
+}
+
+.market-photo-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.market-badge {
+    align-self: flex-start;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(119, 219, 255, 0.12);
+    color: var(--accent-cyan);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.market-card h3 {
+    font-size: 1.02rem;
+    color: var(--text-main);
+}
+
+.page-hero {
+    margin-bottom: 28px;
+}
+
+.gemstone-product-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.gemstone-stage {
+    position: relative;
+}
+
+.gemstone-product-image {
+    min-height: 560px;
+    border-radius: 32px;
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3);
+}
+
+.gemstone-copy {
+    display: grid;
+    gap: 22px;
+}
+
+.gemstone-scroll-section {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+.gemstone-scroll-media {
+    position: relative;
+    min-height: 180vh;
+}
+
+.gemstone-scroll-image {
+    position: sticky;
+    top: 120px;
+    min-height: 420px;
+    border-radius: 28px;
+    transform-origin: center top;
+    transition: transform 0.18s linear, opacity 0.18s linear;
+    box-shadow: 0 24px 54px rgba(0, 0, 0, 0.32);
+}
+
+.gemstone-real-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.gemstone-real-image-contain {
+    object-fit: contain;
+    padding: 22px;
+    image-rendering: auto;
+}
+
+.gemstone-story-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 30px;
+    align-items: start;
+}
+
+.gemstone-story-media {
+    position: relative;
+    min-height: 220vh;
+}
+
+.gemstone-story-image {
+    position: sticky;
+    top: 120px;
+    min-height: 560px;
+    border-radius: 32px;
+    transform-origin: center top;
+    transition: transform 0.18s linear, opacity 0.18s linear;
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.32);
+}
+
+.gemstone-story-content {
+    display: grid;
+    gap: 22px;
+}
+
+.gemstone-static-layout .gemstone-story-media {
+    min-height: auto;
+}
+
+.gemstone-static-layout .gemstone-story-image {
+    position: relative;
+    top: 0;
+    min-height: 560px;
+    opacity: 1;
+    transform: none;
+}
+
+.gemstone-empty-card {
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gemstone-scroll-content {
+    display: grid;
+    gap: 20px;
+}
+
+.review-card {
+    min-height: 280px;
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.review-card h3 {
+    font-family: "Cinzel", serif;
+    color: var(--accent-gold);
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+}
+
+.review-card p:last-child {
+    color: var(--text-soft);
+    font-size: 1.02rem;
+}
+
+.content-panel {
+    width: min(1100px, 92%);
+    margin: 28px auto 60px;
+    padding: 38px 30px;
+    border-radius: 22px;
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gem-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.gem-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.18), transparent 24%),
+        radial-gradient(circle at 82% 28%, rgba(255, 255, 255, 0.12), transparent 18%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+    z-index: -1;
+}
+
+.ruby-sky {
+    background:
+        radial-gradient(circle at top left, rgba(255, 103, 103, 0.28), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 180, 112, 0.22), transparent 28%),
+        linear-gradient(150deg, rgba(72, 11, 28, 0.95), rgba(25, 6, 24, 0.92));
+}
+
+.emerald-sky {
+    background:
+        radial-gradient(circle at top left, rgba(108, 255, 178, 0.2), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(184, 255, 188, 0.14), transparent 30%),
+        linear-gradient(150deg, rgba(10, 58, 42, 0.94), rgba(6, 23, 23, 0.92));
+}
+
+.sapphire-sky {
+    background:
+        radial-gradient(circle at top left, rgba(112, 177, 255, 0.24), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(170, 209, 255, 0.18), transparent 28%),
+        linear-gradient(150deg, rgba(8, 34, 88, 0.94), rgba(7, 14, 40, 0.92));
+}
+
+.hero-orbits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.hero-orbits span {
+    padding: 9px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-main);
+    font-size: 0.88rem;
+    backdrop-filter: blur(10px);
+}
+
+.gemstone-visual {
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 38%),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gemstone-story-image::after {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+}
+
+.gemstone-real-image {
+    position: relative;
+    z-index: 1;
+}
+
+.gemstone-panel-intro {
+    margin-bottom: 24px;
+}
+
+.gemstone-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.gemstone-fact {
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gemstone-fact strong {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--accent-gold);
+    font-family: "Cinzel", serif;
+    margin-bottom: 4px;
+}
+
+.gemstone-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.gemstone-highlight {
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gemstone-highlight h4 {
+    color: var(--accent-cyan);
+    margin-bottom: 8px;
+    font-size: 1.02rem;
+}
+
+.gemstone-highlight p {
+    color: var(--text-soft);
+}
+
+.gemstone-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.gemstone-mini-card {
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gemstone-mini-card h4 {
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.gemstone-mini-card p {
+    color: var(--text-soft);
+    font-size: 0.95rem;
+}
+
+.gemstone-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.gemstone-cta-copy p {
+    margin: 0;
+}
+
+.gemstone-cta .book {
+    top: 0;
+}
+
+.two-column-panel {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.centered-heading {
+    text-align: center;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.info-card,
+.form-card {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.info-card h3,
+.form-card h3 {
+    color: var(--accent-gold);
+    font-family: "Cinzel", serif;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.info-card p,
+.form-card p,
+.form-card label {
+    color: var(--text-soft);
+}
+
+.detail-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.detail-list span {
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(119, 219, 255, 0.12);
+    color: var(--accent-cyan);
+    font-size: 0.88rem;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(5, 6, 30, 0.78);
+    color: var(--text-main);
+    font: inherit;
+}
+
+.form-card input::placeholder,
+.form-card textarea::placeholder {
+    color: rgba(207, 210, 235, 0.72);
+}
+
+.form-card button {
+    margin-top: 8px;
+    align-self: flex-start;
+}
+
+@keyframes starPulse {
+    0% {
+        opacity: 0.35;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.95;
+        transform: scale(1.03);
+    }
+    100% {
+        opacity: 0.55;
+        transform: scale(0.98);
+    }
+}
+
+@keyframes sparkleShift {
+    0% {
+        opacity: 0.35;
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        opacity: 0.95;
+        transform: translate3d(4px, -3px, 0);
+    }
+    100% {
+        opacity: 0.5;
+        transform: translate3d(-4px, 3px, 0);
+    }
+}
+
+@keyframes wheelRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 860px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px 18px;
+    }
+
+    .hero {
+        margin-top: 40px;
+        padding: 44px 20px;
+    }
+
+    .hero-bg-wheel {
+        right: 50%;
+        top: auto;
+        bottom: -120px;
+        width: min(88vw, 500px);
+        transform: translateX(50%);
+        opacity: 0.2;
+    }
+
+    .hero-copy {
+        max-width: none;
+    }
+
+    .market-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .two-column-panel,
+    .feature-grid,
+    .gemstone-highlights,
+    .gemstone-mini-grid,
+    .gemstone-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .gemstone-product-layout,
+    .gemstone-scroll-section,
+    .gemstone-story-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .gemstone-product-image {
+        min-height: 420px;
+    }
+
+    .gemstone-scroll-media {
+        min-height: auto;
+    }
+
+    .gemstone-story-media {
+        min-height: auto;
+    }
+
+    .gemstone-scroll-image {
+        position: relative;
+        top: 0;
+        min-height: 320px;
+    }
+
+    .gemstone-story-image {
+        position: relative;
+        top: 0;
+        min-height: 400px;
+    }
+
+    .review-card {
+        min-height: auto;
+    }
+
+    .gemstone-cta {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 560px) {
+    .hero-bg-wheel {
+        bottom: -90px;
+        width: min(96vw, 420px);
+        opacity: 0.16;
+    }
+
+    .marketplace-section {
+        padding: 30px 18px;
+    }
+
+    .market-grid {
+        grid-template-columns: 1fr;
+    }
+}
